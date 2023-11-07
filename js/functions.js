@@ -104,23 +104,23 @@ else{
 console.log(age);
 
 //FOR
-console.log(array_tex.length)// con esto leemos el valor que tiene un vector o array
+console.log(array_text.length)// con esto leemos el valor que tiene un vector o array
 for(let i=0; i<array_text.length; i++){
-    console.log(array_tex[i] + (i + 1));// + i, coquetanación
+    console.log(array_text[i] + (i + 1));// + i, coquetanación
 }
 
 //WHILE
 let j = 0;
-while(j<array_tex.length){
-    console.log(array_tex[j] + (j + 1));
+while(j<array_text.length){
+    console.log(array_text[j] + (j + 1));
     j++;
 }
 // DO WHILE
 let w = 0;
 do{
-    console.log(array_tex[j] + (j + 1));
+    console.log(array_text[j] + (j + 1));
     w++;
-}while(w<array_tex.length)
+}while(w<array_text.length)
 
 // CREAR FUNCIONES
 function load_page(){ // cuando se carga la pagina, va a preguntar en el parcial sobre eventos  
@@ -133,9 +133,9 @@ function change_color(){
     document.body.style.color = color;
 }
 
-const btn_clear = document.querySelector("#limpiar")
+const btn_clear = document.querySelector("#limpiar");
 btn_clear.addEventListener("click", () =>{ //evento de escucha
-    document.body.style.backgroundColor = "white"
+    document.body.style.backgroundColor = "white";
     document.body.style.color = "#000";
 });
 
@@ -148,8 +148,36 @@ const validation    = document.getElementById("validation")
 form_register.addEventListener("submit", event_name =>{ 
     event_name.preventDefault();
     let info = "";
-    if(nombres.ariaValueMax.length <= 2 || apellidos.ariaValueMax.length <= 2 ){
+    if(nombres.ariaValueMax.length <= 2 || apellidos.ariaValueMax.length<= 2 ){
         info += "Nombres y o apellidos deben ser mayores a 2 letras";
-        validation.style.backgroundColor ;
+        validation.style.backgroundColor;
     }
 });
+
+function loasd_page() {
+    document.getElementById("nombres").focus();
+    document.getElementById("apellidos").disabled = true;
+    let date = new Date ();
+    console.log (date.getFullYear);
+
+    for (let a =0 ;a< array_mul.length;a++) {
+        console.log(array_mul[a].name);
+        
+    }
+
+}
+function validate() {
+    // alert("FÙNCIONA");
+    let nombres_uno = document.getElementById("nombres").value;
+    console.log (nombres_uno.length);
+    if (nombres_uno.length > 2) {
+        document.getElementById("apellidos").disabled = false;
+        document.getElementById("nombres").focus();
+        alert(nombres.indexOf("Amaya"));
+    }
+}
+
+function limpiar() {
+    let nombres_uno = document.getElementById("nombres").value;
+}
+
